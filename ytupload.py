@@ -71,8 +71,9 @@ for file in sorted(glob.glob("videos\\*.mp4"), key=numericalSort):
     driver.find_element_by_xpath("/html/body/ytcp-uploads-dialog/paper-dialog/div/ytcp-uploads-file-picker/div/ytcp-button/div").click()
 
     ### INPUT FILE PATH
+    absolute_path = os.path.abspath(file)
     time.sleep(1.5)
-    pyautogui.write(file)
+    pyautogui.write(absolute_path)
     time.sleep(1)
     pyautogui.press('enter')
 
